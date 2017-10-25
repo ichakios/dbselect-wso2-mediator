@@ -6,7 +6,7 @@
 
 	<groupId>com.solugence.mediators</groupId>
 	<artifactId>com-solugence-mediators</artifactId>
-	<version>1.1.3</version>
+	<version>1.0.0</version>
 	<name>com-solugence-mediators-dbselect</name>
 	<url>http://www.solugence.com</url>
 	<description>Advanced Database Lookup Mediator for WSO2 ESB

@@ -11,6 +11,11 @@ import org.apache.synapse.mediators.db.Statement;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+/**
+ * 
+ * @author user
+ *
+ */
 public class DBSelectMediator extends AbstractDBMediator
 {
 
@@ -26,6 +31,7 @@ public class DBSelectMediator extends AbstractDBMediator
 
 			JSONArray resultASJSONARR 	= new JSONArray();
 			JSONObject jsonObject		= null;
+			System.out.println(stmnt.getResultsMap().keySet());
 			while (rs.next())
 			{
 				jsonObject = new JSONObject();
