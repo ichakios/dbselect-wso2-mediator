@@ -7,10 +7,10 @@ Unlike standard [DBLookup Mediator](https://docs.wso2.org/display/ESB481/DBLooku
  
 **Usage:**
 
-Build the mediator and put its JAR into into:
+Build the mediator and put its JAR into :
 
 ```
-$ESB_HOME/repository/components/dropins
+$ESB_HOME/dropins
 ```
 
 **Syntax:**
