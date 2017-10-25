@@ -15,31 +15,25 @@ $ESB_HOME/repository/components/dropins
 
 **Syntax:**
 
-```xml
+```JSON
 <dbselect>
-   <connection>
-      <pool>
-       (
-        <driver/>
-        <url/>
-        <user/>
-        <password/>
- 
-        <dsName/>
-        <icClass/>
-        <url/>
-        <user/>
-        <password/>
-       )
-        <property name="name" value="value"/>*
-      </pool>
-   </connection>
-   <statement>
-      <sql>SELECT something FROM table WHERE something_else = ?</sql>
-      <parameter [value="" | expression=""] type="CHAR|VARCHAR|LONGVARCHAR|NUMERIC|DECIMAL|BIT|TINYINT|SMALLINT|INTEGER|BIGINT|REAL|FLOAT|DOUBLE|DATE|TIME|TIMESTAMP"/>*
-      <result name="string" column="int|string"/>*
-   </statement>+
-</dbselect>
+        <connection>
+            <pool>
+                <dsName>dataSource</dsName>
+            </pool>
+        </connection>
+        <statement>
+            <sql><![CDATA[Select * from table where column = ?]]></sql>
+            <parameter expression="get-property('column')" type="CHAR"/>
+            <result column="column1" name="column1"/>
+             <result column="column2" name="column2"/>
+            <result column="column3" name="column3"/>
+            
+        </statement>
+    </dbselect>
+    <log level="custom">
+        <property expression="fn:concat('get the JSON DATA as DB_SELECT_RESULT => ', get-property('DB_SELECT_RESULT')) " name="message"/>
+    </log>
 ```
 Result set would be stored as DB_SELECT_RESULT property.
 
