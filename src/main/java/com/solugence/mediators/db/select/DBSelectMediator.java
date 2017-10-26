@@ -31,7 +31,7 @@ public class DBSelectMediator extends AbstractDBMediator
 
 			JSONArray resultASJSONARR 	= new JSONArray();
 			JSONObject jsonObject		= null;
-			System.out.println(stmnt.getResultsMap().keySet());
+			System.out.println("ResultsMap==>> "+stmnt.getResultsMap().keySet());
 			while (rs.next())
 			{
 				jsonObject = new JSONObject();

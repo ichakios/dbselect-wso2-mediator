@@ -24,12 +24,6 @@ public class DBSelectMediatorFactory extends AbstractDBMediatorFactory
 		return mediator;
 	}
 
-	/**
-	 * Reads the data source configuration for all mediators based on the
-	 * <code>AbstractDBMediator</code> and stores the configuration in the
-	 * mediator for datasource initialization and de-serialization.
-	 *
-	 */
 	@Override
 	public QName getTagQName()
 	{

@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-
+	<packaging>bundle</packaging>
 	<groupId>com.solugence.mediators</groupId>
 	<artifactId>com-solugence-mediators</artifactId>
 	<version>1.0.0</version>
@@ -12,10 +12,23 @@
 	<description>Advanced Database Lookup Mediator for WSO2 ESB
 Tested on JDK1.8 and EI 6.1.1
 Return a JSON array that contains JSON object, each object will represent a row in the table</description>
-
-
-
-
+	
+	<repositories>
+        <repository>
+            <id>wso2-maven2-repository</id>
+            <url>http://dist.wso2.org/maven2</url>
+        </repository>
+        <repository>
+            <id>apache-Incubating-repo</id>
+            <name>Maven Incubating Repository</name>
+            <url>http://people.apache.org/repo/m2-incubating-repository</url>
+        </repository>
+        <repository>
+            <id>apache-maven2-repo</id>
+            <name>Apache Maven2 Repository</name>
+            <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+    </repositories>
 	<build>
 		<plugins>
 			<plugin>
@@ -34,10 +47,10 @@ Return a JSON array that contains JSON object, each object will represent a row 
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Bundle-SymbolicName>net.agava.esb.mediators.db.select</Bundle-SymbolicName>
-						<Bundle-Name>net.agava.esb.mediators.db.select</Bundle-Name>
+						<Bundle-SymbolicName>com.solugence.mediators.db.select</Bundle-SymbolicName>
+						<Bundle-Name>com.solugence.mediators.db.select</Bundle-Name>
 						<Export-Package>
-							net.agava.esb.mediators.db.select.*,
+							com.solugence.mediators.db.select.*,
 						</Export-Package>
 						<Ignore-Package>javax.xml.namespace</Ignore-Package>
 						<Import-Package>
@@ -74,7 +87,7 @@ Return a JSON array that contains JSON object, each object will represent a row 
 			</exclusions>
 			<scope>provided</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.ws.commons.axiom</groupId>
 			<artifactId>axiom-api</artifactId>
 			<version>1.2.14</version>
@@ -85,7 +98,7 @@ Return a JSON array that contains JSON object, each object will represent a row 
 			<artifactId>axiom-impl</artifactId>
 			<version>1.2.14</version>
 			<scope>provided</scope>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
