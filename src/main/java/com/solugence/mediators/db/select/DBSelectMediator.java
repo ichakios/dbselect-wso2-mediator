@@ -5,11 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.mediators.db.AbstractDBMediator;
 import org.apache.synapse.mediators.db.Statement;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import com.ctc.wstx.util.StringUtil;
 
 /**
  * 
@@ -31,13 +34,14 @@ public class DBSelectMediator extends AbstractDBMediator
 
 			JSONArray resultASJSONARR 	= new JSONArray();
 			JSONObject jsonObject		= null;
-			System.out.println("ResultsMap==>> "+stmnt.getResultsMap().keySet());
+			String propValue = null;
 			while (rs.next())
 			{
 				jsonObject = new JSONObject();
 				for (String propName : stmnt.getResultsMap().keySet())
 				{
-					jsonObject.put(propName, rs.getString(propName));
+					propValue = rs.getString(propName);
+					jsonObject.put(propName,propValue==null?"":propValue);
 				}
 				resultASJSONARR.put(jsonObject);
 			}
