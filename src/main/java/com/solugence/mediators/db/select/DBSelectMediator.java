@@ -5,14 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.synapse.MessageContext;
 import org.apache.synapse.mediators.db.AbstractDBMediator;
 import org.apache.synapse.mediators.db.Statement;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import com.ctc.wstx.util.StringUtil;
 
 /**
  * 
